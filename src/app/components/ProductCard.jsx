@@ -1,4 +1,3 @@
-// src/components/ProductCard.jsx
 'use client';
 
 import React from 'react';
@@ -8,18 +7,13 @@ import { addToCart } from '../features/cart/cartSlice';
 const ProductCard = ({ product }) => {
   const dispatch = useDispatch();
 
-  const handleAdd = () => {
-    dispatch(addToCart(product));
-  };
-
   return (
-    <div className="border rounded-2xl shadow p-4 flex flex-col items-center text-center hover:shadow-lg transition">
-      <img src={product.image} alt={product.name} className="w-32 h-32 object-contain mb-4" />
-      <h2 className="text-lg font-semibold">{product.name}</h2>
-      <p className="text-gray-600 mb-2">${product.price}</p>
+    <div className="border rounded-lg p-4 shadow hover:shadow-lg transition">
+      <h2 className="text-xl font-semibold">{product.name}</h2>
+      <p className="text-gray-700">${product.price}</p>
       <button
-        onClick={handleAdd}
-        className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition"
+        className="mt-4 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600"
+        onClick={() => dispatch(addToCart(product))}
       >
         Add to Cart
       </button>

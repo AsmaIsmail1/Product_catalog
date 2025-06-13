@@ -1,6 +1,7 @@
-// src/app/store.js
+'use client';
+
 import { configureStore } from '@reduxjs/toolkit';
-import cartReducer from '../features/cart/cartSlice';
+import cartReducer from './features/cart/cartSlice';
 
 const loadState = () => {
   try {
